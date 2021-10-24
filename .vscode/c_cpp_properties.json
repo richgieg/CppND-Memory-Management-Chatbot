@@ -3,8 +3,9 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**",
-                "/usr/include/wx-3.0/**"
+                "${workspaceFolder}/src/**",
+                "${workspaceFolder}/dep/linux/linux_lib/lib/wx/include/gtk3-unicode-static-3.1",
+                "${workspaceFolder}/dep/linux/include"
             ],
             "defines": [
                 "WX_PRECOMP",
