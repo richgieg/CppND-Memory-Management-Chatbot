@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <memory>
 #include "chatbot.h"
 
 
@@ -19,7 +20,7 @@ private:
     std::vector<GraphEdge *> _childEdges;  // edges to subsequent nodes
 
     // data handles (not owned)
-    std::vector<GraphEdge *> _parentEdges; // edges to preceding nodes 
+    std::vector<GraphEdge *> _parentEdges; // edges to preceding nodes
     ChatBot *_chatBot;
 
     ////
@@ -45,6 +46,9 @@ public:
     void AddToken(std::string token); // add answers to list
     void AddEdgeToParentNode(GraphEdge *edge);
     void AddEdgeToChildNode(GraphEdge *edge);
+    void AddEdgeToChildNode2(std::unique_ptr<GraphEdge> edge) {
+
+    }
 
     //// STUDENT CODE
     ////
