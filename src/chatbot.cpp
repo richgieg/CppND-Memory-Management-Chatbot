@@ -46,6 +46,9 @@ ChatBot::~ChatBot()
 ////
 
 // copy constructor
+
+// NOTE: Since ChatBot is not intended to be copied, the copy constructor
+// should be deleted (see comment in chatbot.h).
 ChatBot::ChatBot(const ChatBot& other) {
     std::cout << "ChatBot Copy Constructor" << std::endl;
 
@@ -74,6 +77,9 @@ ChatBot::ChatBot(ChatBot&& other) {
 }
 
 // copy assignment: clean up target and copy
+
+// NOTE: Since ChatBot is not intended to be copied, the copy assignment
+// should be deleted (see comment in chatbot.h).
 ChatBot& ChatBot::operator=(const ChatBot& other) {
     std::cout << "ChatBot Copy Assignment" << std::endl;
 
