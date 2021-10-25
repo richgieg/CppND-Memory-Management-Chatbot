@@ -12,7 +12,7 @@
 #include "chatlogic.h"
 
 
-ChatLogic::ChatLogic()
+ChatLogic::ChatLogic(): _currentNode{nullptr}, _chatBot{nullptr}, _panelDialog{nullptr}
 {
     //// STUDENT CODE
     ////
