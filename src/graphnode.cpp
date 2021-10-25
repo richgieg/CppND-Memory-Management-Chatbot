@@ -2,11 +2,7 @@
 #include "graphedge.h"
 #include "graphnode.h"
 
-GraphNode::GraphNode(int id)
-{
-    _id = id;
-    _chatBot = nullptr;
-}
+GraphNode::GraphNode(int id): _id{id}, _chatBot{nullptr} {}
 
 GraphNode::~GraphNode()
 {
