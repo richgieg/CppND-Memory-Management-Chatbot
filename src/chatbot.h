@@ -31,9 +31,17 @@ public:
     ////
 
     ChatBot(const ChatBot& other);              // copy constructor
-    ChatBot(ChatBot&& other);                  // move constructor
+    ChatBot(ChatBot&& other);                   // move constructor
     ChatBot& operator=(const ChatBot& other);   // copy assignment: clean up target and copy
     ChatBot& operator=(ChatBot&& other);        // move assignment: clean up target and move
+
+    // NOTE: Since ChatBot is not intended to be copied, the copy constructor
+    // and copy assignment should be deleted (see commented code below).
+    // However, I left them in above since the instructions specifically
+    // say to have them.
+
+    // ChatBot(const ChatBot& other) = delete; // prevent construction by copy
+    // ChatBot& operator=(const ChatBot& other) = delete; // prevent assignment by copy
 
     ////
     //// EOF STUDENT CODE

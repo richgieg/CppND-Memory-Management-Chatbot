@@ -87,6 +87,12 @@ ChatBot& ChatBot::operator=(const ChatBot& other) {
     _rootNode = other._rootNode;
     _currentNode = other._currentNode;
 
+    // invalidate data handles in moved object
+    _image = nullptr;
+    _chatLogic = nullptr;
+    _rootNode = nullptr;
+    _currentNode = nullptr;
+
     return *this;
 }
 
