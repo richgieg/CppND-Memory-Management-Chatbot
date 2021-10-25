@@ -51,6 +51,7 @@ ChatBot::ChatBot(const ChatBot& other) {
 
     _image = other._image;
     _chatLogic = other._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
     _rootNode = other._rootNode;
     _currentNode = other._currentNode;
 }
@@ -61,6 +62,7 @@ ChatBot::ChatBot(ChatBot&& other) {
 
     _image = other._image;
     _chatLogic = other._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
     _rootNode = other._rootNode;
     _currentNode = other._currentNode;
 
@@ -77,6 +79,7 @@ ChatBot& ChatBot::operator=(const ChatBot& other) {
 
     _image = other._image;
     _chatLogic = other._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
     _rootNode = other._rootNode;
     _currentNode = other._currentNode;
 
