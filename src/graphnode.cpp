@@ -38,9 +38,10 @@ void GraphNode::AddEdgeToChildNode(std::unique_ptr<GraphEdge> edge)
 
 //// STUDENT CODE
 ////
-void GraphNode::MoveChatbotHere(ChatBot&& chatbot)
+void GraphNode::MoveChatbotHere(ChatBot&& chatBot)
 {
-    _chatBot = new ChatBot(std::move(chatbot));
+    _chatBot = new ChatBot();
+    *_chatBot = std::move(chatBot);
     _chatBot->SetCurrentNode(this);
 }
 

@@ -18,6 +18,14 @@ private:
 
     // data handles (owned)
     std::vector<std::unique_ptr<GraphEdge>> _childEdges;  // edges to subsequent nodes
+
+    // I would prefer to use unique_ptr to manage this, but when I tried that
+    // the ChatBot move constructor / move assignment methods don't get called
+    // (which makes since because it's the unique_ptr that's being moved from
+    // node to node in that case). Anyway, since the project rubric requires
+    // the move constructor or move assignment messages to print, I use a raw
+    // pointer along with move semantics on the ChatBot instance to move it
+    // from node to node.
     ChatBot *_chatBot;
 
     // data handles (not owned)
