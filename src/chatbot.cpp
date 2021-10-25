@@ -103,14 +103,15 @@ ChatBot& ChatBot::operator=(ChatBot&& other) {
 
     _image = other._image;
     _chatLogic = other._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
     _rootNode = other._rootNode;
     _currentNode = other._currentNode;
 
     // invalidate data handles in moved object
-    _image = nullptr;
-    _chatLogic = nullptr;
-    _rootNode = nullptr;
-    _currentNode = nullptr;
+    other._image = nullptr;
+    other._chatLogic = nullptr;
+    other._rootNode = nullptr;
+    other._currentNode = nullptr;
 
     return *this;
 }
