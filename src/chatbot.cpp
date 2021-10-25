@@ -65,33 +65,20 @@ ChatBot::ChatBot(ChatBot&& other) {
     _currentNode = other._currentNode;
 
     // invalidate data handles in moved object
-    _image = nullptr;
-    _chatLogic = nullptr;
-    _rootNode = nullptr;
-    _currentNode = nullptr;
+    other._image = nullptr;
+    other._chatLogic = nullptr;
+    other._rootNode = nullptr;
+    other._currentNode = nullptr;
 }
 
 // copy assignment: clean up target and copy
 ChatBot& ChatBot::operator=(const ChatBot& other) {
     std::cout << "ChatBot Copy Assignment" << std::endl;
 
-    // deallocate heap memory
-    if(_image != NULL) // Attention: wxWidgets used NULL and not nullptr
-    {
-        delete _image;
-        _image = NULL;
-    }
-
     _image = other._image;
     _chatLogic = other._chatLogic;
     _rootNode = other._rootNode;
     _currentNode = other._currentNode;
-
-    // invalidate data handles in moved object
-    _image = nullptr;
-    _chatLogic = nullptr;
-    _rootNode = nullptr;
-    _currentNode = nullptr;
 
     return *this;
 }
@@ -99,13 +86,6 @@ ChatBot& ChatBot::operator=(const ChatBot& other) {
 // move assignment: clean up target and move
 ChatBot& ChatBot::operator=(ChatBot&& other) {
     std::cout << "ChatBot Move Assignment" << std::endl;
-
-    // deallocate heap memory
-    if(_image != NULL) // Attention: wxWidgets used NULL and not nullptr
-    {
-        delete _image;
-        _image = NULL;
-    }
 
     _image = other._image;
     _chatLogic = other._chatLogic;
