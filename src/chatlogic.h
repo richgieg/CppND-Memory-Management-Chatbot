@@ -24,7 +24,6 @@ private:
     //// EOF STUDENT CODE
 
     // data handles (not owned)
-    std::vector<GraphEdge *> _edges;
     GraphNode *_currentNode;
     ChatBot *_chatBot;
     ChatBotPanelDialog *_panelDialog;
